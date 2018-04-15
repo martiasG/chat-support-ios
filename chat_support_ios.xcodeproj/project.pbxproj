@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480C99652082C28700340656 /* QuestionCellsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C99642082C28700340656 /* QuestionCellsTableViewCell.swift */; };
+		480C99672082D2B300340656 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C99662082D2B300340656 /* QuestionDetailViewController.swift */; };
 		4828ECC8207EED1E000591C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828ECC7207EED1E000591C8 /* AppDelegate.swift */; };
-		4828ECCA207EED1E000591C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828ECC9207EED1E000591C8 /* ViewController.swift */; };
+		4828ECCA207EED1E000591C8 /* UserQuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828ECC9207EED1E000591C8 /* UserQuestionsTableViewController.swift */; };
 		4828ECCD207EED1E000591C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4828ECCB207EED1E000591C8 /* Main.storyboard */; };
 		4828ECD0207EED1E000591C8 /* chat_support_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4828ECCE207EED1E000591C8 /* chat_support_ios.xcdatamodeld */; };
 		4828ECD2207EED1F000591C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4828ECD1207EED1F000591C8 /* Assets.xcassets */; };
@@ -17,9 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480C99642082C28700340656 /* QuestionCellsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCellsTableViewCell.swift; sourceTree = "<group>"; };
+		480C99662082D2B300340656 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		4828ECC4207EED1E000591C8 /* chat_support_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat_support_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4828ECC7207EED1E000591C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4828ECC9207EED1E000591C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4828ECC9207EED1E000591C8 /* UserQuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionsTableViewController.swift; sourceTree = "<group>"; };
 		4828ECCC207EED1E000591C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4828ECCF207EED1E000591C8 /* chat_support_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chat_support_ios.xcdatamodel; sourceTree = "<group>"; };
 		4828ECD1207EED1F000591C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,9 +54,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		480C99632082C21C00340656 /* customCells */ = {
+			isa = PBXGroup;
+			children = (
+				480C99642082C28700340656 /* QuestionCellsTableViewCell.swift */,
+			);
+			path = customCells;
+			sourceTree = "<group>";
+		};
 		4828ECBB207EED1E000591C8 = {
 			isa = PBXGroup;
 			children = (
+				480C99632082C21C00340656 /* customCells */,
 				4828ECC6207EED1E000591C8 /* chat_support_ios */,
 				4828ECC5207EED1E000591C8 /* Products */,
 				C97B1CFFC97D5C6639665296 /* Pods */,
@@ -72,12 +85,13 @@
 			isa = PBXGroup;
 			children = (
 				4828ECC7207EED1E000591C8 /* AppDelegate.swift */,
-				4828ECC9207EED1E000591C8 /* ViewController.swift */,
+				4828ECC9207EED1E000591C8 /* UserQuestionsTableViewController.swift */,
 				4828ECCB207EED1E000591C8 /* Main.storyboard */,
 				4828ECD1207EED1F000591C8 /* Assets.xcassets */,
 				4828ECD3207EED1F000591C8 /* LaunchScreen.storyboard */,
 				4828ECD6207EED1F000591C8 /* Info.plist */,
 				4828ECCE207EED1E000591C8 /* chat_support_ios.xcdatamodeld */,
+				480C99662082D2B300340656 /* QuestionDetailViewController.swift */,
 			);
 			path = chat_support_ios;
 			sourceTree = "<group>";
@@ -184,8 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4828ECCA207EED1E000591C8 /* ViewController.swift in Sources */,
+				480C99672082D2B300340656 /* QuestionDetailViewController.swift in Sources */,
+				4828ECCA207EED1E000591C8 /* UserQuestionsTableViewController.swift in Sources */,
 				4828ECC8207EED1E000591C8 /* AppDelegate.swift in Sources */,
+				480C99652082C28700340656 /* QuestionCellsTableViewCell.swift in Sources */,
 				4828ECD0207EED1E000591C8 /* chat_support_ios.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +350,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z694WL5684;
 				INFOPLIST_FILE = chat_support_ios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nav.chat-support-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -350,7 +369,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z694WL5684;
 				INFOPLIST_FILE = chat_support_ios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nav.chat-support-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
