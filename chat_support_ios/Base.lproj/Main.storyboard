@@ -64,27 +64,55 @@
                     <view key="view" contentMode="scaleToFill" id="Ucr-Kq-GRZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-XT-13y">
+                                <rect key="frame" x="67" y="112" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fQ4-Ib-faQ"/>
                     </view>
+                    <connections>
+                        <outlet property="questionDetailTextArea" destination="gbA-XT-13y" id="vEC-QA-56C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WqY-dR-Kre" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2359" y="90"/>
         </scene>
-        <!--View Controller-->
+        <!--New Question View Controller-->
         <scene sceneID="x6L-8L-NeU">
             <objects>
-                <viewController id="Ue9-kO-J95" sceneMemberID="viewController">
+                <viewController id="Ue9-kO-J95" customClass="NewQuestionViewController" customModule="chat_support_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bl9-PK-LBI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0Q-rR-MVm">
+                                <rect key="frame" x="67" y="105" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3e3-iZ-LbE"/>
                     </view>
                     <navigationItem key="navigationItem" id="aaH-Ow-wMZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7f7-j3-9jk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7f7-j3-9jk">
+                            <connections>
+                                <action selector="onSaveButtonPressed:" destination="Ue9-kO-J95" id="tuI-nl-hLS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailQuestionLabel" destination="k0Q-rR-MVm" id="lCL-pZ-9f3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exD-Ol-Ip3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BaseEntity" representedClassName="BaseEntity" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="deleteDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertDate" attributeType="Date" defaultDateTimeInterval="545700900" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifyDate" attributeType="Date" defaultDateTimeInterval="545700900" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="QuestionEntity" representedClassName=".QuestionEntity" parentEntity="BaseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="messageDetail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncronized" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="BaseEntity" positionX="-65" positionY="-171" width="128" height="88"/>
+    </elements>
 </model>

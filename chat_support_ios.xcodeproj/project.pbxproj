@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		480C99652082C28700340656 /* QuestionCellsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C99642082C28700340656 /* QuestionCellsTableViewCell.swift */; };
 		480C99672082D2B300340656 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C99662082D2B300340656 /* QuestionDetailViewController.swift */; };
+		480C99692082DBF200340656 /* NewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C99682082DBF200340656 /* NewQuestionViewController.swift */; };
+		480C996B2083880200340656 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C996A2083880200340656 /* UserPreferences.swift */; };
 		4828ECC8207EED1E000591C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828ECC7207EED1E000591C8 /* AppDelegate.swift */; };
 		4828ECCA207EED1E000591C8 /* UserQuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4828ECC9207EED1E000591C8 /* UserQuestionsTableViewController.swift */; };
 		4828ECCD207EED1E000591C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4828ECCB207EED1E000591C8 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		480C99642082C28700340656 /* QuestionCellsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCellsTableViewCell.swift; sourceTree = "<group>"; };
 		480C99662082D2B300340656 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
+		480C99682082DBF200340656 /* NewQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionViewController.swift; sourceTree = "<group>"; };
+		480C996A2083880200340656 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		4828ECC4207EED1E000591C8 /* chat_support_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat_support_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4828ECC7207EED1E000591C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4828ECC9207EED1E000591C8 /* UserQuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionsTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				4828ECD6207EED1F000591C8 /* Info.plist */,
 				4828ECCE207EED1E000591C8 /* chat_support_ios.xcdatamodeld */,
 				480C99662082D2B300340656 /* QuestionDetailViewController.swift */,
+				480C99682082DBF200340656 /* NewQuestionViewController.swift */,
+				480C996A2083880200340656 /* UserPreferences.swift */,
 			);
 			path = chat_support_ios;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				480C99672082D2B300340656 /* QuestionDetailViewController.swift in Sources */,
+				480C996B2083880200340656 /* UserPreferences.swift in Sources */,
+				480C99692082DBF200340656 /* NewQuestionViewController.swift in Sources */,
 				4828ECCA207EED1E000591C8 /* UserQuestionsTableViewController.swift in Sources */,
 				4828ECC8207EED1E000591C8 /* AppDelegate.swift in Sources */,
 				480C99652082C28700340656 /* QuestionCellsTableViewCell.swift in Sources */,

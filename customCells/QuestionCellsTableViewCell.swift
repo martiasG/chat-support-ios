@@ -9,7 +9,6 @@
 import UIKit
 
 class QuestionCellsTableViewCell: UITableViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

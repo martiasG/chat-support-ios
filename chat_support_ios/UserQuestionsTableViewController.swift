@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
-class UserQuestionsTableViewController: UITableViewController, DetailsParametersControllerProtocol {
+class UserQuestionsTableViewController: UITableViewController, DetailsParametersControllerProtocol, NewQuestionDelegate {
     
-    let mockData = ["1", "2", "3", "4", "5"]
+    var mockData = [QuestionEntity]()
     var selectedQuestionID:Int = 0
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let request : NSFetchRequest<QuestionEntity> = QuestionEntity.fetchRequest()
+        
+        do{
+            try mockData = context.fetch(request)
+        }catch{
+            print("Error getting entities \(error)")
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -26,7 +36,10 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath)
         //Do something with the cell
-        cell.textLabel?.text = mockData[indexPath.row]
+        cell.textLabel?.text = mockData[indexPath.row].messageDetail
+        
+        cell.accessoryType = mockData[indexPath.row].syncronized ? .checkmark : .detailButton
+        
         return cell
     }
     
@@ -35,14 +48,15 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
         
         let cell = tableView.cellForRow(at: indexPath)
         
-        if(cell?.accessoryType == .checkmark){
-            cell?.accessoryType = .none
-        }else{
-            cell?.accessoryType = .checkmark
-        }
+        mockData[indexPath.row].syncronized = !mockData[indexPath.row].syncronized
+        cell?.accessoryType = mockData[indexPath.row].syncronized ? .checkmark : .detailButton
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         self.selectedQuestionID = indexPath.row
+        
+        tableView.rectForRow(at: indexPath)
+        
         performSegue(withIdentifier: "QuestionDetailSegue", sender: nil)
     }
     
@@ -50,11 +64,24 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
         return self.selectedQuestionID
     }
     
+    func addNewQuestion(question: QuestionEntity) {
+        mockData.append(question)
+        
+        tableView.reloadData()
+    }
+    
+    func getQuestionDetail() -> String {
+        return mockData[self.selectedQuestionID].messageDetail!
+    }
+    
     //MARK - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "QuestionDetailSegue"){
             let controller = segue.destination as? QuestionDetailViewController
             controller?.questionDetailDelegate = self
+        }else if(segue.identifier == "newQuestionSegue"){
+            let controller = segue.destination as? NewQuestionViewController
+            controller?.delegate = self
         }
     }
 }
