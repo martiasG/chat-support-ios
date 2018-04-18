@@ -8,9 +8,10 @@
     <entity name="QuestionEntity" representedClassName=".QuestionEntity" parentEntity="BaseEntity" syncable="YES" codeGenerationType="class">
         <attribute name="messageDetail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="syncronized" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="73"/>
         <element name="BaseEntity" positionX="-65" positionY="-171" width="128" height="88"/>
+        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>
