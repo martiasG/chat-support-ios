@@ -16,21 +16,11 @@ class NewQuestionViewController: UIViewController {
     var delegate:NewQuestionDelegate?
     
     //MARK - Outlets
-    @IBOutlet weak var detailQuestionLabel: UITextView!
-    @IBOutlet weak var titleTextArea: UITextField!
+
+//    @IBOutlet weak var DetailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        detailQuestionLabel.layer.borderColor = UIColor.black.cgColor
-        detailQuestionLabel.layer.borderWidth = 1
-        detailQuestionLabel.layer.cornerRadius = 5
-        
-        titleTextArea.layer.borderColor = UIColor.black.cgColor
-        titleTextArea.layer.borderWidth = 1
-        titleTextArea.layer.cornerRadius = 5
-        
-        titleTextArea.placeholder = "Describe your issue"
         // Do any additional setup after loading the view.
     }
 
@@ -44,8 +34,7 @@ class NewQuestionViewController: UIViewController {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let question = QuestionEntity(context: context)
-        question.messageDetail = detailQuestionLabel.text
-        question.title = titleTextArea.text
+//        question.messageDetail = DetailTextField.text
         
          (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
