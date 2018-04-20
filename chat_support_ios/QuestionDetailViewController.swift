@@ -18,7 +18,7 @@ class QuestionDetailViewController: UIViewController {
     var questionDetailDelegate:DetailsParametersControllerProtocol?
 
     //MARK - OUTLETS
-    @IBOutlet weak var questionDetailTextArea: UITextView!
+    @IBOutlet weak var questionDetailTextArea: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

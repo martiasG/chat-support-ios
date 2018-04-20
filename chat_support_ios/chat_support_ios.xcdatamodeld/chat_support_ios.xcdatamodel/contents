@@ -9,9 +9,19 @@
         <attribute name="messageDetail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="syncronized" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" parentEntity="BaseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="BaseEntity" positionX="-65" positionY="-171" width="128" height="88"/>
-        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="UserEntity" positionX="-63" positionY="-72" width="128" height="135"/>
     </elements>
 </model>

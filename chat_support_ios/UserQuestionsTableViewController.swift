@@ -10,13 +10,16 @@ import UIKit
 import CoreData
 
 class UserQuestionsTableViewController: UITableViewController, DetailsParametersControllerProtocol, NewQuestionDelegate {
-    
     var mockData = [QuestionEntity]()
     var selectedQuestionID:Int = 0
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named:"home_background"))
+        tableView.backgroundView?.alpha = 0.8
+        tableView.backgroundView?.contentMode = .scaleAspectFill
         
         let request : NSFetchRequest<QuestionEntity> = QuestionEntity.fetchRequest()
         
