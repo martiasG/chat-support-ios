@@ -6,5 +6,6 @@ target 'chat_support_ios' do
   use_frameworks!
 
   # Pods for chat_support_ios
-
+ 	pod 'Alamofire', '~> 4.7'
+	pod 'AlamofireImage', '~> 3.3'
 end

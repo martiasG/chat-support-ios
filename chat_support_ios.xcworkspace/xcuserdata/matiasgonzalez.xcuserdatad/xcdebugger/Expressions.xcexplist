@@ -14,6 +14,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "QuestionService.saveNewQuestion(_:):QuestionService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RequestQueue.insertNewRequest(_:):Queue.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "array.count()">
+            </PersistentString>
+            <PersistentString
+               value = "queue.count()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in QuestionService.saveNewQuestion(_:):QuestionService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.status">
+            </PersistentString>
+            <PersistentString
+               value = " response.response?.statusCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RequestQueue.insertNewRequest(requestId:):Queue.swift">
+      </ContextState>
+      <ContextState
          contextName = "UserQuestionsTableViewController.tableView(_:numberOfRowsInSection:):UserQuestionsTableViewController.swift">
          <PersistentStrings>
             <PersistentString
