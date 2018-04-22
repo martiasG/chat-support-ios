@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class UserProfileControllerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class UserProfileControllerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     let countries = ["Argentina", "Chile", "Bolivia", "Paraguay"]
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var selectedCountry:String?
@@ -28,6 +28,11 @@ class UserProfileControllerViewController: UIViewController, UIPickerViewDelegat
         
         countryPicker.delegate = self
         countryPicker.dataSource = self
+        nameTextArea.delegate = self
+        lastNameTextArea.delegate = self
+        emailTextArea.delegate = self
+        phoneNumberTextArea.delegate = self
+        companyNameTextArea.delegate = self
         
         let request : NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         
@@ -86,14 +91,20 @@ class UserProfileControllerViewController: UIViewController, UIPickerViewDelegat
         
         navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //MARK -UIReturn Action
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        if(textField == nameTextArea){
+            lastNameTextArea.becomeFirstResponder()
+        }else if(textField == lastNameTextArea){
+            emailTextArea.becomeFirstResponder()
+        }else if(textField == emailTextArea){
+            phoneNumberTextArea.becomeFirstResponder()
+        }else if(textField == phoneNumberTextArea){
+            companyNameTextArea.becomeFirstResponder()
+        }
+        
+        return true
     }
-    */
-
 }

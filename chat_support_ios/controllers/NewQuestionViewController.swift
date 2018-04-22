@@ -12,7 +12,7 @@ protocol NewQuestionDelegate {
     func addNewQuestion(question:QuestionDto)
 }
 
-class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
     let type = ["SDK", "Firmware", "Custom", "Manuals"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -32,13 +32,16 @@ class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPicke
     //MARK - Outlets
     @IBOutlet weak var issueTypePicker: UIPickerView!
     @IBOutlet weak var subjetTextArea: UITextField!
-    @IBOutlet weak var detailTextArea: UITextField!
+    @IBOutlet weak var detailTextArea: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         issueTypePicker.delegate = self
         issueTypePicker.dataSource = self
+        subjetTextArea.delegate = self
+        detailTextArea.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -61,4 +64,20 @@ class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPicke
         navigationController?.popViewController(animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        detailTextArea.becomeFirstResponder()
+        
+        //By returning no the new line wont be passed over to the textView
+        return false
+    }
+    
+    /* Updated for Swift 4 */
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }

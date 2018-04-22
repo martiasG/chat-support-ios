@@ -38,7 +38,7 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
         //Do something with the cell
         cell.textLabel?.text = mockData[indexPath.row].description
         
-        cell.accessoryType = mockData[indexPath.row].synced! ? .checkmark : .detailButton
+        cell.accessoryType = mockData[indexPath.row].synced ? .checkmark : .detailButton
         
         return cell
     }
@@ -46,7 +46,7 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
 
-        cell?.accessoryType = mockData[indexPath.row].synced! ? .checkmark : .detailButton
+        cell?.accessoryType = mockData[indexPath.row].synced ? .checkmark : .detailButton
 
         DispatchQueue.main.async {
             self.selectedQuestionID = indexPath.row
@@ -60,9 +60,7 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
     
     func addNewQuestion(question: QuestionDto) {
         mockData.append(question)
-        let indexPath = IndexPath(row: mockData.count-1, section: 0)
-        
-        tableView.rectForRow(at: indexPath)
+        tableView.reloadData()
     }
     
     func getQuestionDetail() -> String {
