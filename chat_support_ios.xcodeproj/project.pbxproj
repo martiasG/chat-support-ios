@@ -21,6 +21,7 @@
 		48AC65BD20898FD4000CC6E2 /* chat_support_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AC65BB20898FD4000CC6E2 /* chat_support_ios.xcdatamodeld */; };
 		48BAC3CA208CFC72007781E6 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAC3C9208CFC72007781E6 /* QuestionRepository.swift */; };
 		48BAC3CD208CFD74007781E6 /* QuestionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAC3CC208CFD74007781E6 /* QuestionDto.swift */; };
+		48BAC3CF208D8304007781E6 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAC3CE208D8304007781E6 /* UserRepository.swift */; };
 		6CF0B6D15605A41F001C0972 /* Pods_chat_support_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93679567F45F0147B4E715A /* Pods_chat_support_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		48AC65BC20898FD4000CC6E2 /* chat_support_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chat_support_ios.xcdatamodel; sourceTree = "<group>"; };
 		48BAC3C9208CFC72007781E6 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		48BAC3CC208CFD74007781E6 /* QuestionDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDto.swift; sourceTree = "<group>"; };
+		48BAC3CE208D8304007781E6 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		5754254F196D6388D2AE30D0 /* Pods-chat_support_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat_support_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-chat_support_ios/Pods-chat_support_ios.release.xcconfig"; sourceTree = "<group>"; };
 		D93679567F45F0147B4E715A /* Pods_chat_support_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chat_support_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78092EE995B93C7E6154A21 /* Pods-chat_support_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat_support_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chat_support_ios/Pods-chat_support_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				48BAC3C9208CFC72007781E6 /* QuestionRepository.swift */,
+				48BAC3CE208D8304007781E6 /* UserRepository.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				480C99672082D2B300340656 /* QuestionDetailViewController.swift in Sources */,
 				480C996B2083880200340656 /* UserPreferences.swift in Sources */,
+				48BAC3CF208D8304007781E6 /* UserRepository.swift in Sources */,
 				480C99692082DBF200340656 /* NewQuestionViewController.swift in Sources */,
 				48BAC3CA208CFC72007781E6 /* QuestionRepository.swift in Sources */,
 				48AC65BD20898FD4000CC6E2 /* chat_support_ios.xcdatamodeld in Sources */,

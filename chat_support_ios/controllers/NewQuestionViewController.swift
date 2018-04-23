@@ -33,6 +33,8 @@ class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var issueTypePicker: UIPickerView!
     @IBOutlet weak var subjetTextArea: UITextField!
     @IBOutlet weak var detailTextArea: UITextView!
+    @IBOutlet weak var subjectRequiredLabel: UILabel!
+    @IBOutlet weak var detailRequiredLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,7 @@ class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPicke
         subjetTextArea.delegate = self
         detailTextArea.delegate = self
         
+        QuestionService.instance.syncQuestion()
         // Do any additional setup after loading the view.
     }
 
@@ -52,12 +55,48 @@ class NewQuestionViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     //MARK -Actions
     @IBAction func onSaveButtonPressed(_ sender: Any) {
+        subjectRequiredLabel.isHidden = true
+        detailRequiredLabel.isHidden = true
+        
+        if(subjetTextArea.text!.isEmpty){
+            subjetTextArea.becomeFirstResponder()
+            subjectRequiredLabel.isHidden = false
+            return
+        }else if(detailTextArea.text!.isEmpty){
+            detailTextArea.becomeFirstResponder()
+            detailRequiredLabel.isHidden = false
+            return
+        }
+        
+        if(!UserDao.instance.userRegistrationIsComplete()){
+            let alert = UIAlertController(title: "User Registration is not complete", message: "It's recommended you complete it before continuing.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Complete Registration?", style: .default, handler: {
+                action in
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "userProfileSegue", sender: nil)
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            action in
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }))
+            
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
         let questionDto = QuestionDto()
         questionDto.title = subjetTextArea.text
         questionDto.description = detailTextArea.text
         questionDto.type = type[issueTypePicker.selectedRow(inComponent: 0)]
-        
         delegate?.addNewQuestion(question: questionDto)
+        
+        let questionEntity = QuestionDao.instance.saveQuestion(question: questionDto)
+        questionDto.id = questionEntity.objectID.uriRepresentation().absoluteString
         
         QuestionService.instance.saveNewQuestion(questionDto)
         

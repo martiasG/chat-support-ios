@@ -14,6 +14,14 @@ public class QuestionService{
     static let instance = QuestionService()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    func syncQuestion(){
+        let questionsDto:[QuestionDto] = QuestionDao.instance.getAllQuestionsNotSynced()
+        
+        for questionDto in questionsDto {
+            saveNewQuestion(questionDto)
+        }
+    }
+    
     func saveNewQuestion(_ question:QuestionDto){
         let request : NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         
@@ -63,8 +71,12 @@ public class QuestionService{
 //            .validate(contentType: ["application/json"])
             .responseData{ response in
                 switch response.result{
+                    //Send event that question was save sussccefuly so the Repository can update its status
+                    // and the lista can change reflect that too
                     case .success:
                         print("200OK \(response)")
+                        QuestionDao.instance.updateQuestionStatus(objectId: question.id!)
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "QuestionUpdated"), object: nil)
                     case .failure(let error):
                         print("ERROR \(error)")
                 }

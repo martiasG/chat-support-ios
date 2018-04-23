@@ -18,6 +18,8 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTable), name:  NSNotification.Name(rawValue: "QuestionUpdated"), object: nil)
+        
         self.tableView.backgroundView = UIImageView(image: UIImage(named:"home_background"))
         self.tableView.backgroundView?.alpha = 0.8
         self.tableView.backgroundView?.contentMode = .scaleAspectFill
@@ -31,6 +33,11 @@ class UserQuestionsTableViewController: UITableViewController, DetailsParameters
         noQuestionLabel.isHidden = mockData.count > 0
         
         return mockData.count;
+    }
+    
+    @objc func refreshTable(notification: NSNotification){
+        mockData = QuestionDao.instance.getAllQuestions()
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

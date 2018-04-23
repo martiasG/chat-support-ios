@@ -13,4 +13,5 @@ public class QuestionDto{
     var description:String?
     var type:String?
     var synced:Bool = false
+    var id:String?
 }
